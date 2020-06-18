@@ -1,0 +1,41 @@
+version: "3.2"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.5.2
+    ports:
+      - 5601:5601
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - dev_data:/var/lib/postgres/data
+
+  web:
+    build: .
+    environment:
+      DEBUG: "true"
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      SECRET_KEY: ${SECRET_KEY}
+      SUPERUSER: ${DJANGO_SUPERUSER}
+      SUPERPASS: ${DJANGO_SUPERPASS}
+    command: python manage.py runserver ${DJANGO_HOST}:${DJANGO_PORT}
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /backend
+    ports:
+      - "${DJANGO_PORT}:${DJANGO_PORT}"
+    depends_on:
+      - db
+      - elasticsearch
+
+volumes:
+  dev_data:
