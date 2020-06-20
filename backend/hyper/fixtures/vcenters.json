@@ -1,0 +1,52 @@
+[
+  {
+    "pk": 1,
+    "model": "hyper.hypermanager",
+    "fields": {
+      "name": "vcenter-test",
+      "url": "https://vcenter-test.domain.com",
+      "username": "administrator@vsphere.local",
+      "password": "password"
+    }
+  },
+    {
+    "pk": 2,
+    "model": "hyper.hypermanager",
+    "fields": {
+      "name": "vcenter-devel",
+      "url": "https://vcenter-devel.domain.com",
+      "username": "administrator@vsphere.local",
+      "password": "password"
+    }
+  },
+    {
+    "pk": 3,
+    "model": "hyper.hypermanager",
+    "fields": {
+      "name": "vcenter-staging",
+      "url": "https://vcenter-staging.domain.com",
+      "username": "administrator@vsphere.local",
+      "password": "password"
+    }
+  },
+    {
+    "pk": 4,
+    "model": "hyper.hypermanager",
+    "fields": {
+      "name": "vcenter-prod1",
+      "url": "https://vcenter-prod1.domain.com",
+      "username": "administrator@vsphere.local",
+      "password": "password"
+    }
+  },
+    {
+    "pk": 5,
+    "model": "hyper.hypermanager",
+    "fields": {
+      "name": "vcenter-prod2",
+      "url": "https://vcenter-prod2.domain.com",
+      "username": "administrator@vsphere.local",
+      "password": "password"
+    }
+  }
+]

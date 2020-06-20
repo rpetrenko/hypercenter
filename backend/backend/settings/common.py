@@ -97,7 +97,7 @@ ELASTICSEARCH_DSL = {
 }
 
 ELASTICSEARCH_INDEX_NAMES = {
-    ''
+    'search.documents.hypermanager': 'hypermanager',
 }
 
 REST_FRAMEWORK = {

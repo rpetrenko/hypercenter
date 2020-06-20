@@ -29,9 +29,22 @@ pip install -r requirements.txt
 ```bash
 docker exec -it hypercenter_web_1 /bin/bash
  ```
+
+* create/populate/rebuild elasticsearch indeces
+```bash
+ docker exec hypercenter_web_1 python manage.py search_index --create -f
+ docker exec hypercenter_web_1 python manage.py search_index --populate -f
+ docker exec hypercenter_web_1 python manage.py search_index --rebuild -f
+``` 
  
 ## Debug
 * verify elasticsearch search is up and running from django container
 ```bash
 docker exec hypercenter_web_1 curl http://elasticsearch:9200
+```
+
+## Load fake data
+* load vcenters
+```bash
+docker exec hypercenter_web_1 python manage.py loaddata hyper/fixtures/vcenters.json
 ```
