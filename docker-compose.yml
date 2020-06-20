@@ -13,8 +13,8 @@ services:
   db:
     image: postgres:alpine
     environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${SUPERPASS}
+      POSTGRES_DB: ${PG_DB}
     volumes:
       - dev_data:/var/lib/postgres/data
 
@@ -22,17 +22,17 @@ services:
     build: .
     environment:
       DEBUG: "true"
-      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      DATABASE_URL: postgres://postgres:${SUPERPASS}@db:5432/${PG_DB}
       SECRET_KEY: ${SECRET_KEY}
-      SUPERUSER: ${DJANGO_SUPERUSER}
-      SUPERPASS: ${DJANGO_SUPERPASS}
-    command: python manage.py runserver ${DJANGO_HOST}:${DJANGO_PORT}
+      SUPERUSER: admin
+      SUPERPASS: ${SUPERPASS}
+    command: python manage.py runserver 0.0.0.0:8080
     volumes:
       - type: bind
         source: ./backend
         target: /backend
     ports:
-      - "${DJANGO_PORT}:${DJANGO_PORT}"
+      - "${WEB_PORT}:8080"
     depends_on:
       - db
       - elasticsearch
