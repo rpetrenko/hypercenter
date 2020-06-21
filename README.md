@@ -28,7 +28,8 @@
 * login to [django admin site](http://localhost:8080/admin/) with username *admin* and password set in .env for *SUPERPASS* variable
 
 * delete sample data for HyperManagers and add your Vcenters. 
- 
+
+![Sample Dashboard](HyperManager-Dashboard.png "Title") 
 ## Test
 
 
