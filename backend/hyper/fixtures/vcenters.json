@@ -6,7 +6,9 @@
       "name": "vcenter-test",
       "url": "https://vcenter-test.domain.com",
       "username": "administrator@vsphere.local",
-      "password": "password"
+      "password": "password",
+      "version": "6.5.0",
+      "online": true
     }
   },
     {
@@ -16,7 +18,10 @@
       "name": "vcenter-devel",
       "url": "https://vcenter-devel.domain.com",
       "username": "administrator@vsphere.local",
-      "password": "password"
+      "password": "password",
+      "version": "6.7.0",
+      "online": false
+
     }
   },
     {
@@ -26,7 +31,9 @@
       "name": "vcenter-staging",
       "url": "https://vcenter-staging.domain.com",
       "username": "administrator@vsphere.local",
-      "password": "password"
+      "password": "password",
+      "version": "7.0.0",
+      "online": true
     }
   },
     {
@@ -36,7 +43,9 @@
       "name": "vcenter-prod1",
       "url": "https://vcenter-prod1.domain.com",
       "username": "administrator@vsphere.local",
-      "password": "password"
+      "password": "password",
+      "version": "6.5.0",
+      "online": false
     }
   },
     {
@@ -46,7 +55,9 @@
       "name": "vcenter-prod2",
       "url": "https://vcenter-prod2.domain.com",
       "username": "administrator@vsphere.local",
-      "password": "password"
+      "password": "password",
+      "version": "6.7.0",
+      "online": true
     }
   }
 ]
