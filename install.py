@@ -238,7 +238,25 @@ def check_kibana():
     print("ok")
 
 
+def load_sample_data(fname_json):
+    print(f"Loading sample data from {fname_json}...", end="")
+    rc, se, so = run_cmd_web(["python", "manage.py", "loaddata", "vcenters.json"])
+    if rc:
+        exit_install("Failed to load sample data", 18, se, so)
+    print("ok")
+
+
+def import_kibana_dashboards(space_name, import_dir):
+    print("Importing kibana dashboards...", end="")
+    rc, se, so = run_cmd(["python", "kibana/import_dashboards.py", space_name, import_dir])
+    if rc:
+        exit_install("Failed to import kibana dashboards", 19, se, so)
+    print("ok")
+
+
 if __name__ == "__main__":
+
+    # install
     check_dot_env_config()
     vars = get_env_vars()
     external_port = int(vars['WEB_PORT'])
@@ -258,3 +276,10 @@ if __name__ == "__main__":
     check_search_hypermanager_api(external_port)
     check_kibana()
 
+    # load sample data
+    load_sample_data("vcenters.json")
+
+    # import kibana dashboards
+    import_kibana_dashboards("test", "kibana/dashboards")
+
+    print("Done")

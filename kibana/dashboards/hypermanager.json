@@ -1,0 +1,146 @@
+{
+  "version": "7.5.2",
+  "objects": [
+    {
+      "id": "34bc5770-b352-11ea-b12b-a5d0f6ee8adb",
+      "type": "dashboard",
+      "updated_at": "2020-06-21T06:26:44.891Z",
+      "version": "WzI3LDFd",
+      "attributes": {
+        "title": "HyperManager Dashboard",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"version\":\"7.5.2\",\"gridData\":{\"x\":0,\"y\":0,\"w\":13,\"h\":14,\"i\":\"13b5d893-937b-423b-8cc2-b7866794def9\"},\"panelIndex\":\"13b5d893-937b-423b-8cc2-b7866794def9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.5.2\",\"gridData\":{\"x\":13,\"y\":0,\"w\":25,\"h\":28,\"i\":\"a560ed60-cda8-485e-961a-6e9845b0bded\"},\"panelIndex\":\"a560ed60-cda8-485e-961a-6e9845b0bded\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.5.2\",\"gridData\":{\"x\":0,\"y\":14,\"w\":13,\"h\":14,\"i\":\"2c69467c-8260-4d4b-b27a-6c30bcaacd02\"},\"panelIndex\":\"2c69467c-8260-4d4b-b27a-6c30bcaacd02\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"}]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "panel_0",
+          "type": "visualization",
+          "id": "0c95b750-b352-11ea-b12b-a5d0f6ee8adb"
+        },
+        {
+          "name": "panel_1",
+          "type": "search",
+          "id": "45d86080-b352-11ea-b12b-a5d0f6ee8adb"
+        },
+        {
+          "name": "panel_2",
+          "type": "visualization",
+          "id": "6a0a1fc0-b352-11ea-b12b-a5d0f6ee8adb"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      }
+    },
+    {
+      "id": "0c95b750-b352-11ea-b12b-a5d0f6ee8adb",
+      "type": "visualization",
+      "updated_at": "2020-06-20T23:59:57.735Z",
+      "version": "WzE0LDFd",
+      "attributes": {
+        "title": "HyperManager Online Status",
+        "visState": "{\"title\":\"HyperManager Online Status\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100},\"dimensions\":{\"metric\":{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"count\"},\"buckets\":[{\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"boolean\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"online\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":100,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "hypermanager-index-id"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "45d86080-b352-11ea-b12b-a5d0f6ee8adb",
+      "type": "search",
+      "updated_at": "2020-06-21T00:00:52.872Z",
+      "version": "WzIwLDFd",
+      "attributes": {
+        "title": "HyperManager List",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "name",
+          "url",
+          "version",
+          "online"
+        ],
+        "sort": [
+          [
+            "_score",
+            "desc"
+          ]
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "hypermanager-index-id"
+        }
+      ],
+      "migrationVersion": {
+        "search": "7.4.0"
+      }
+    },
+    {
+      "id": "6a0a1fc0-b352-11ea-b12b-a5d0f6ee8adb",
+      "type": "visualization",
+      "updated_at": "2020-06-21T00:01:53.596Z",
+      "version": "WzIyLDFd",
+      "attributes": {
+        "title": "HyperManager Versions",
+        "visState": "{\"title\":\"HyperManager Versions\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"dimensions\":{\"buckets\":[{\"accessor\":0,\"aggType\":\"terms\",\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"boolean\",\"missingBucketLabel\":\"Missing\",\"otherBucketLabel\":\"Other\"}},\"params\":{}}],\"metric\":{\"accessor\":1,\"aggType\":\"count\",\"format\":{\"id\":\"number\"},\"params\":{}}},\"isDonut\":true,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"top\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"version\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":100,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "hypermanager-index-id"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "hypermanager-index-id",
+      "type": "index-pattern",
+      "updated_at": "2020-06-21T00:00:43.157Z",
+      "version": "WzE5LDFd",
+      "attributes": {
+        "title": "hypermanager",
+        "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"id\",\"type\":\"number\",\"esTypes\":[\"integer\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"name\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"online\",\"type\":\"boolean\",\"esTypes\":[\"boolean\"],\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"url\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"version\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "6.5.0"
+      }
+    }
+  ]
+}
