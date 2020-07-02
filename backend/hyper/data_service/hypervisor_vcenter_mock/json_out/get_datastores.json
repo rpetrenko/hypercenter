@@ -1,0 +1,29 @@
+[
+  {
+    "ds_type": "VMFS",
+    "name": "vmfs-datastore",
+    "capacity": 500000000000,
+    "uuid": "11111111-22222222-eeee-333333333333",
+    "version": "6.82",
+    "devices": [
+      {
+        "name": "naa.12345678aaaaaaaaaaaaaaaaaaaaaaaa",
+        "partition": 1
+      }
+    ]
+  },
+  {
+    "ds_type": "NFS",
+    "name": "nfs-datastore",
+    "capacity": 20000000000000,
+    "remotehost": "11.22.33.44",
+    "remotepath": "/remote-share"
+  },
+  {
+    "ds_type": "VVOL",
+    "name": "vvol-datastore",
+    "capacity": 10000000000000000,
+    "scid": "vvol:1111111111aaaaaa-222222222bbbbbbb",
+    "array": "array1"
+  }
+]

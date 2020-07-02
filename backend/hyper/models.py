@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class HyperManager(models.Model):
@@ -22,3 +23,8 @@ class HyperManager(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    def update_status(self, online):
+        if self.online and not online:
+            self.offline_date = timezone.now()
+        self.online = online

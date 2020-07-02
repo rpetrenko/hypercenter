@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "host1.domain.com",
+    "Path": "/datacenter1/host/cluster1/host1.domain.com",
+    "Manufacturer": "",
+    "Logical CPUs": "32 CPUs @ 2600MHz",
+    "Processor type": "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz",
+    "CPU usage": "292 MHz (0.4%)",
+    "Memory": "262098MB",
+    "Memory usage": "23893 MB (9.1%)",
+    "Boot time": "2020-06-09 16:39:29.014986 +0000 UTC",
+    "State": "connected"
+  }
+]

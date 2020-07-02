@@ -1,0 +1,16 @@
+{
+  "Name": "VMware vCenter Server",
+  "FullName": "VMware vCenter Server 7.0.0 build-15952599",
+  "Vendor": "VMware, Inc.",
+  "Version": "7.0.0",
+  "Build": "15952599",
+  "LocaleVersion": "INTL",
+  "LocaleBuild": "000",
+  "OsType": "linux-x64",
+  "ProductLineId": "vpx",
+  "ApiType": "VirtualCenter",
+  "ApiVersion": "7.0.0.0",
+  "InstanceUuid": "eeeeeeee-7777-4444-aaaa-dddddddddddd",
+  "LicenseProductName": "VMware VirtualCenter Server",
+  "LicenseProductVersion": "7.0"
+}

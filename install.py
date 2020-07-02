@@ -200,12 +200,20 @@ def check_admin_login(port, password):
     print("ok")
 
 
-def check_elasticsearch_from_web_container(port):
-    print("Checking elasticsearch API from django...", end="")
-    rc, se, so = run_cmd_web(["curl", f"http://elasticsearch:{port}/"])
+def check_elasticsearch_from_web_container(port, timeout=60):
+    start = time.time()
+    rc = 0
+    while time.time() - start < timeout:
+        try:
+            print("Checking elasticsearch API from django...", end="")
+            rc, se, so = run_cmd_web(["curl", f"http://elasticsearch:{port}/"])
+            print("ok")
+            return
+        except Exception as e:
+            print(e)
+            time.sleep(10)
     if rc:
         exit_install("Failed to access elasticsearch API from web container", 14, se, so)
-    print("ok")
 
 
 def create_elasticsearch_index(port):
