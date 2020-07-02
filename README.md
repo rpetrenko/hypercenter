@@ -64,3 +64,9 @@ docker exec hypercenter_web_1 curl http://elasticsearch:9200
 ```bash
 docker exec hypercenter_web_1 python manage.py loaddata hyper/fixtures/vcenters.json
 ```
+
+## Manually update vcenter information
+```bash
+docker-compose run --rm web python manage.py update_vcenters
+```
+
