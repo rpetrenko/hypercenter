@@ -61,6 +61,7 @@ class Kibana(object):
             return [x['id'] for x in res]
         else:
             print(f"ERR: {err}")
+            return False
 
     def create_space(self, space_id, **kwargs):
         """

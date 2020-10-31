@@ -256,10 +256,16 @@ def load_sample_data(fname_json):
 
 def import_kibana_dashboards(space_name, import_dir):
     print("Importing kibana dashboards...", end="")
-    rc, se, so = run_cmd(["python", "kibana/import_dashboards.py", space_name, import_dir])
-    if rc:
+    for i in range(5):
+        rc, se, so = run_cmd(["python", "kibana/import_dashboards.py", space_name, import_dir])
+        if rc:
+            print("failed, retrying...", end="")
+            time.sleep(10)
+        else:
+            print("ok")
+            break
+    else:
         exit_install("Failed to import kibana dashboards", 19, se, so)
-    print("ok")
 
 
 if __name__ == "__main__":
