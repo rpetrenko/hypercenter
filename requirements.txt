@@ -17,7 +17,7 @@ elasticsearch==7.0.2
 elasticsearch-dsl==7.0.0
 Faker==4.1.0
 idna==2.9
-paramiko==2.7.1
+paramiko==2.10.1
 psycopg2-binary==2.8.5
 pycparser==2.20
 PyNaCl==1.4.0
